@@ -7,6 +7,7 @@
 rel="stylesheet">
 <link rel="stylesheet" href="style.css">
         <title>Employee payroll form</title>
+        <script defer src="../form_validation.js"></script>
     </head>
     <body>
         <header class="header-content header">
@@ -74,6 +75,12 @@ rel="stylesheet">
                 <label class="label text" for="salary">Choose your salary:</label>
                 <input class="input" type="range" name="salary" id="salary" min="30000" max="500000" step="100" value="400000">
                 <output class="salary-output text" for="salary">400000</output>
+                <script> const salary = document.querySelector('#salary');
+                    const output =document.querySelector('.salary-output');
+                    output.textContent = salary.value;
+                    salary.addEventListener('input',function(){
+                        output.textContent = salary.value
+                    });</script>
             </div>
             <div class="row-content">
                 <label class="label text" for="startDate">Start Date :</label>
@@ -123,7 +130,7 @@ rel="stylesheet">
                     <option value="sapt">Saptember</option>
                     <option value="auct">Actober</option>
                     <option value="nove">November</option>
-                    <option value="dece">December</option>
+                    <option value="dec">December</option>
                 </select>
                 <select id="year" name="Year">
                     <option value="2022">2022</option>
